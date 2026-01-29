@@ -1,0 +1,787 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ellaborate Technologies - For Ambitious CSE Students</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fb;
+            color: #1a1a1a;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 80px;
+            background-color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 22px;
+            font-weight: 600;
+        }
+
+        .logo-circle {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #1e5eff 0%, #0041d4 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 24px;
+        }
+
+        .logo-text {
+            color: #1a1a1a;
+        }
+
+        .logo-text span {
+            color: #5b8fff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #5b8fff;
+            font-weight: 500;
+            font-size: 16px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #1e5eff;
+        }
+
+        .get-started-btn {
+            background: linear-gradient(135deg, #1e5eff 0%, #0041d4 100%);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .get-started-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(30, 94, 255, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 80px 100px;
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fb 100%);
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: #e8f0ff;
+            color: #1e5eff;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.5px;
+            margin-bottom: 40px;
+        }
+
+        .hero-title {
+            font-size: 84px;
+            font-weight: 900;
+            line-height: 1.1;
+            background: linear-gradient(135deg, #1e5eff 0%, #0041d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+        }
+
+        .hero-subtitle {
+            font-size: 22px;
+            color: #8c9ab8;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto 50px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .start-learning-btn {
+            background: linear-gradient(135deg, #c8dcff 0%, #a8c8ff 100%);
+            color: white;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .start-learning-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(168, 200, 255, 0.4);
+        }
+
+        .view-roadmaps-btn {
+            background: transparent;
+            color: #a8c8ff;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .view-roadmaps-btn:hover {
+            color: #8eb4ff;
+        }
+
+        /* Built for CSE Section */
+        .built-section {
+            text-align: center;
+            padding: 80px 80px;
+            background: white;
+        }
+
+        .built-title {
+            font-size: 56px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #1e5eff 0%, #0041d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 30px;
+        }
+
+        .built-description {
+            font-size: 20px;
+            color: #5b8fff;
+            line-height: 1.8;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .built-description strong {
+            color: #1e5eff;
+            font-weight: 700;
+        }
+
+        /* What We Offer Section */
+        .offer-section {
+            padding: 100px 80px;
+            background: #f8f9fb;
+        }
+
+        .offer-title {
+            font-size: 56px;
+            font-weight: 900;
+            text-align: center;
+            background: linear-gradient(135deg, #1e5eff 0%, #0041d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .offer-subtitle {
+            font-size: 20px;
+            color: #8c9ab8;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .offer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .offer-card {
+            background: white;
+            border-radius: 24px;
+            padding: 50px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(30, 94, 255, 0.12);
+        }
+
+        .offer-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #1e5eff 0%, #0041d4 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .offer-card-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: #1e5eff;
+            margin-bottom: 20px;
+        }
+
+        .offer-card-description {
+            font-size: 17px;
+            color: #8c9ab8;
+            line-height: 1.6;
+        }
+
+        /* Curated Learning Paths */
+        .paths-section {
+            padding: 100px 80px;
+            background: white;
+        }
+
+        .paths-title {
+            font-size: 56px;
+            font-weight: 900;
+            text-align: center;
+            background: linear-gradient(135deg, #1e5eff 0%, #0041d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .paths-subtitle {
+            font-size: 20px;
+            color: #8c9ab8;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .paths-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .path-card {
+            background: #f8f9fb;
+            border-radius: 24px;
+            padding: 40px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .path-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(30, 94, 255, 0.08);
+        }
+
+        .path-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .path-icon {
+            font-size: 28px;
+            color: #1e5eff;
+        }
+
+        .path-name {
+            font-size: 32px;
+            font-weight: 800;
+            color: #1e5eff;
+        }
+
+        .path-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .path-tag {
+            background: #d6e5ff;
+            color: #1e5eff;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .path-arrow {
+            color: #a8c8ff;
+            font-weight: 300;
+            font-size: 20px;
+        }
+
+        /* Why Students Choose Us */
+        .why-section {
+            padding: 100px 80px;
+            background: linear-gradient(135deg, #1e5eff 0%, #0041d4 100%);
+            text-align: center;
+        }
+
+        .why-title {
+            font-size: 56px;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 80px;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 60px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .why-item {
+            text-align: center;
+        }
+
+        .why-number {
+            font-size: 120px;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.15);
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+
+        .why-text {
+            font-size: 19px;
+            color: white;
+            line-height: 1.6;
+            max-width: 350px;
+            margin: 0 auto;
+        }
+
+        /* Get Started Section */
+        .get-started-section {
+            padding: 100px 80px;
+            background: #f8f9fb;
+        }
+
+        .get-started-container {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .get-started-title {
+            font-size: 56px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #1e5eff 0%, #0041d4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+
+        .get-started-subtitle {
+            font-size: 20px;
+            color: #8c9ab8;
+            margin-bottom: 50px;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+            text-align: left;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1e5eff;
+            margin-bottom: 12px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 18px 24px;
+            border-radius: 12px;
+            border: 2px solid #e8f0ff;
+            background: #f8f9fb;
+            font-size: 16px;
+            color: #1a1a1a;
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #1e5eff;
+            background: white;
+        }
+
+        .form-input::placeholder {
+            color: #b0bcd0;
+        }
+
+        textarea.form-input {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #1e5eff 0%, #0041d4 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(30, 94, 255, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            nav {
+                padding: 20px 40px;
+            }
+
+            .hero {
+                padding: 60px 40px 80px;
+            }
+
+            .hero-title {
+                font-size: 64px;
+            }
+
+            .offer-section,
+            .paths-section,
+            .why-section,
+            .get-started-section,
+            .built-section {
+                padding: 80px 40px;
+            }
+
+            .offer-grid {
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            }
+
+            .paths-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding: 40px 20px 60px;
+            }
+
+            .hero-title {
+                font-size: 42px;
+            }
+
+            .hero-subtitle {
+                font-size: 18px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .offer-section,
+            .paths-section,
+            .why-section,
+            .get-started-section,
+            .built-section {
+                padding: 60px 20px;
+            }
+
+            .offer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .offer-title,
+            .paths-title,
+            .why-title,
+            .get-started-title,
+            .built-title {
+                font-size: 36px;
+            }
+
+            .why-number {
+                font-size: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <div class="logo-circle">N</div>
+            <div class="logo-text">Ellaborate <span>Technologies</span></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#roadmaps">Roadmaps</a></li>
+        </ul>
+        <button class="get-started-btn">Get Started</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-tag">FOR AMBITIOUS CSE STUDENTS</div>
+        <h1 class="hero-title">Transforming Students Into Job-Ready Engineers</h1>
+        <p class="hero-subtitle">Comprehensive roadmaps, mock interviews, live projects, and personalized guidance across all four years of your degree.</p>
+        <div class="hero-buttons">
+            <button class="start-learning-btn">Start Learning →</button>
+            <button class="view-roadmaps-btn">View Roadmaps</button>
+        </div>
+    </section>
+
+    <!-- Built for CSE Section -->
+    <section class="built-section" id="about">
+        <h2 class="built-title">Built Exclusively for CSE</h2>
+        <p class="built-description">We bridge the gap between academic theory and industry expectations. Our mission is to provide <strong>structured learning paths</strong>, <strong>rigorous mock interviews</strong>, and <strong>real-world experience</strong> to ensure you graduate with confidence.</p>
+    </section>
+
+    <!-- What We Offer Section -->
+    <section class="offer-section" id="services">
+        <h2 class="offer-title">What We Offer</h2>
+        <p class="offer-subtitle">Everything you need to succeed in tech</p>
+        <div class="offer-grid">
+            <div class="offer-card">
+                <div class="offer-icon">🎓</div>
+                <h3 class="offer-card-title">1st & 2nd Year Roadmaps</h3>
+                <p class="offer-card-description">Structured weekly plans tailored for AI, ML, and Web Development beginners.</p>
+            </div>
+            <div class="offer-card">
+                <div class="offer-icon">👥</div>
+                <h3 class="offer-card-title">Job Prep for Seniors</h3>
+                <p class="offer-card-description">Mock interviews and resume optimization for 3rd and 4th year students.</p>
+            </div>
+            <div class="offer-card">
+                <div class="offer-icon">🌐</div>
+                <h3 class="offer-card-title">Internship Support</h3>
+                <p class="offer-card-description">Dedicated guidance for finding and securing high-quality internships.</p>
+            </div>
+            <div class="offer-card">
+                <div class="offer-icon">💻</div>
+                <h3 class="offer-card-title">Live Projects</h3>
+                <p class="offer-card-description">Hands-on experience with real-world projects to build your portfolio.</p>
+            </div>
+            <div class="offer-card">
+                <div class="offer-icon">💬</div>
+                <h3 class="offer-card-title">Doubt Support</h3>
+                <p class="offer-card-description">Get your technical questions answered by experienced professionals.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curated Learning Paths -->
+    <section class="paths-section" id="roadmaps">
+        <h2 class="paths-title">Curated Learning Paths</h2>
+        <p class="paths-subtitle">Preview our comprehensive roadmaps</p>
+        <div class="paths-grid">
+            <div class="path-card">
+                <div class="path-header">
+                    <span class="path-icon">📱</span>
+                    <h3 class="path-name">AI Roadmap</h3>
+                </div>
+                <div class="path-tags">
+                    <span class="path-tag">Python</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-tag">Numpy</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-tag">ML</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-tag">Deep Learning</span>
+                </div>
+            </div>
+            <div class="path-card">
+                <div class="path-header">
+                    <span class="path-icon">📱</span>
+                    <h3 class="path-name">Frontend Dev</h3>
+                </div>
+                <div class="path-tags">
+                    <span class="path-tag">HTML/CSS</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-tag">React</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-tag">API</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-tag">Deploy</span>
+                </div>
+            </div>
+            <div class="path-card">
+                <div class="path-header">
+                    <span class="path-icon">📱</span>
+                    <h3 class="path-name">System Design</h3>
+                </div>
+                <div class="path-tags">
+                    <span class="path-tag">DSA</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-tag">LLD</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-tag">HLD</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-tag">Scalability</span>
+                </div>
+            </div>
+            <div class="path-card">
+                <div class="path-header">
+                    <span class="path-icon">📱</span>
+                    <h3 class="path-name">Testing</h3>
+                </div>
+                <div class="path-tags">
+                    <span class="path-tag">Manual</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-tag">Automation</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-tag">Selenium</span>
+                    <span class="path-arrow">→</span>
+                    <span class="path-tag">CI/CD</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Students Choose Us -->
+    <section class="why-section">
+        <h2 class="why-title">Why Students Choose Us</h2>
+        <div class="why-grid">
+            <div class="why-item">
+                <div class="why-number">01</div>
+                <p class="why-text">One-on-one guidance tailored to your specific goals and pace.</p>
+            </div>
+            <div class="why-item">
+                <div class="why-number">02</div>
+                <p class="why-text">Learn directly from engineers working at top tech companies.</p>
+            </div>
+            <div class="why-item">
+                <div class="why-number">03</div>
+                <p class="why-text">Consistent feedback loops to keep your progress on track.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Started Section -->
+    <section class="get-started-section">
+        <div class="get-started-container">
+            <h2 class="get-started-title">Get Started Today</h2>
+            <p class="get-started-subtitle">Join the next cohort of job-ready engineers.</p>
+            <form>
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-input" placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-input" placeholder="john@college.edu">
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Goals / Queries</label>
+                    <textarea class="form-input" placeholder="I want to learn AI/ML..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Application</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Get Started button scroll to form
+        document.querySelectorAll('.get-started-btn, .start-learning-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                document.querySelector('.get-started-section').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
