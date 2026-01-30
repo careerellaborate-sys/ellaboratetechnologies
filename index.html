@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -488,43 +487,6 @@
             box-shadow: 0 8px 25px rgba(30, 94, 255, 0.3);
         }
 
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            nav {
-                padding: 20px 40px;
-            }
-
-            .hero {
-                padding: 60px 40px 80px;
-            }
-
-            .hero-title {
-                font-size: 64px;
-            }
-
-            .offer-section,
-            .paths-section,
-            .why-section,
-            .get-started-section,
-            .built-section {
-                padding: 80px 40px;
-            }
-
-            .offer-grid {
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            }
-
-            .paths-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .why-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-        }
-
         /* Footer */
         .footer {
             background: #1a1a1a;
@@ -560,6 +522,7 @@
         .footer-logo .logo-text {
             font-size: 18px;
             font-weight: 600;
+            color: #1a1a1a;
         }
 
         .footer-description {
@@ -602,24 +565,44 @@
             font-size: 14px;
         }
 
-        @media (max-width: 768px) {
-
-            .footer {
-                padding: 40px 20px 20px;
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            nav {
+                padding: 20px 40px;
             }
 
-            .footer-container {
+            .hero {
+                padding: 60px 40px 80px;
+            }
+
+            .hero-title {
+                font-size: 64px;
+            }
+
+            .offer-section,
+            .paths-section,
+            .why-section,
+            .get-started-section,
+            .built-section {
+                padding: 80px 40px;
+            }
+
+            .offer-grid {
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            }
+
+            .paths-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
 
-            .footer-section {
-                text-align: center;
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
             }
+        }
 
-            .footer-logo {
-                justify-content: center;
-            }
+        @media (max-width: 768px) {
             nav {
                 padding: 15px 20px;
             }
@@ -666,6 +649,23 @@
 
             .why-number {
                 font-size: 80px;
+            }
+
+            .footer {
+                padding: 40px 20px 20px;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-section {
+                text-align: center;
+            }
+
+            .footer-logo {
+                justify-content: center;
             }
         }
     </style>
@@ -888,7 +888,7 @@
             <p>&copy; 2025 Ellaborate Technologies. All rights reserved.</p>
         </div>
     </footer>
-    
+
     <script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
