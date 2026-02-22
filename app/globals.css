@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 98%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 217 91% 60%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  body {
+    @apply bg-brand-bg text-brand-dark font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  html { scroll-behavior: smooth; }
+}
+
+@layer components {
+  .section-container {
+    @apply container mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .section-padding {
+    @apply py-20 lg:py-28;
+  }
+  .heading-xl {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight;
+  }
+  .heading-lg {
+    @apply text-3xl sm:text-4xl font-bold leading-tight tracking-tight;
+  }
+  .heading-md {
+    @apply text-2xl sm:text-3xl font-semibold leading-tight;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-cta-gradient;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-brand-blue text-white font-semibold text-sm tracking-wide transition-all duration-200 hover:bg-brand-navy hover:shadow-lg hover:shadow-brand-blue/20 hover:-translate-y-0.5 active:translate-y-0;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border-2 border-brand-navy text-brand-navy font-semibold text-sm tracking-wide transition-all duration-200 hover:bg-brand-navy hover:text-white hover:-translate-y-0.5;
+  }
+  .btn-cta {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg bg-cta-gradient text-white font-semibold tracking-wide shadow-lg shadow-brand-blue-25 transition-all duration-200 hover:shadow-xl hover:shadow-brand-blue-30 hover:-translate-y-0.5;
+  }
+  .card-base {
+    @apply bg-white rounded-2xl border border-gray-100 shadow-sm transition-all duration-300;
+  }
+  .card-hover {
+    @apply hover:shadow-xl hover:shadow-brand-blue-8 hover:-translate-y-1 hover:border-brand-blue-20;
+  }
+}
+
+/* Hero grid pattern */
+.hero-grid-bg {
+  background-image: radial-gradient(circle at 1px 1px, rgba(37, 99, 235, 0.12) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f1f5f9; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
